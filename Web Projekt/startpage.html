@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Higher or Lower</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+            max-width: 80%;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3.0vw;
+            color: #a09ba2;
+            font-style: italic;
+            margin: 0 0 20px 0;
+        }
+        h2 {
+            text-align: center;
+            color: #a09ba2;
+            font-style: italic;
+            margin: 0 0 20px 0;
+        }
+
+        button {
+            background-color: #857e4b;
+            font-style: italic;
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            font-size: 1.0vw;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button:hover {
+
+            animation: bounce 0.75s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            button {
+                font-size: 3vw;
+                padding: 12px 24px;
+            }
+            .content {
+                width: 60%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                font-size: 4vw;
+                padding: 14px 28px;
+            }
+            .content {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+<video autoplay muted loop class="video-background">
+    <source src="background-video2.mp4" type="video/mp4">
+</video>
+
+<div class="content">
+    <h1>Higher or Lower</h1>
+    <h2>Spotify Edition</h2>
+    <button  class="bounce"  onclick="window.location.href = 'game.html';">Start</button>
+</div>
+</body>
+</html>
